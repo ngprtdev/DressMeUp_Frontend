@@ -34,7 +34,7 @@ export default function SnapScreen({ navigation }) {
             type: 'image/jpeg',
         })
 
-        fetch('https://dress-me-up-backend-olive.vercel.app/clothes/upload', {
+        fetch('https://dress-me-up-backend-livid.vercel.app/clothes/upload', {
             method: 'POST',
             body: formData,
         }).then((response) => response.json())

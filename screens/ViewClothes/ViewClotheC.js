@@ -42,7 +42,7 @@ function ViewClotheC({ navigation, route }) {
 
   const handleDelete = (clothe) => {
     console.log("id to delete", clothe.id)
-    fetch(`https://dress-me-up-backend-olive.vercel.app/clothes`, {
+    fetch(`https://dress-me-up-backend-livid.vercel.app/clothes`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ clotheId: clothe.id }),

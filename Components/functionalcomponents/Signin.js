@@ -26,7 +26,7 @@ export default function SignIn({navigation}) {
 
   const handleSubmit = () => {
     if (showSignup) {
-      fetch("https://dress-me-up-backend-olive.vercel.app/users/signup", {
+      fetch("https://dress-me-up-backend-livid.vercel.app/users/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -45,7 +45,7 @@ export default function SignIn({navigation}) {
           setShowSignup(!showSignup)
         });
     } else {
-      fetch("https://dress-me-up-backend-olive.vercel.app/users/signin", {
+      fetch("https://dress-me-up-backend-livid.vercel.app/users/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
