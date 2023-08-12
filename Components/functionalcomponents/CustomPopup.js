@@ -12,7 +12,7 @@ const CustomPopup = ({ isVisible, onClose, onDelete }) => {
   const clickDeleteButton = () => {
     setDeleteUser(true);
     console.log("tu es suprimé");
-    fetch(`http://172.20.10.2:3000/users/${usernameToDelete}`, {method: 'DELETE'})
+    fetch(`https://dress-me-up-backend-olive.vercel.app/users/${usernameToDelete}`, {method: 'DELETE'})
     .then(response => response.json())
     .then((data) => {
       console.log(data);
