@@ -150,7 +150,7 @@ function OverviewOutfit({ navigation }) {
     const randomId = Math.random() * 1000;
     dispatch(setId(randomId));
     // console.log('tempOutfit', temporaryOutfit)
-    fetch("https://dress-me-up-backend-livid.vercel.app/outfits", {
+    fetch("https://dress-me-up-backend-red.vercel.app/outfits", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -194,27 +194,24 @@ function OverviewOutfit({ navigation }) {
 
       // Create a new FormData to send the image to the server
       const formData = new FormData();
-      formData.append("photoFromFront", {
+      formData.append("file", {
         uri: uri,
         name: "photo.png",
         type: "image/png",
       });
 
-      // Send the image to the server and await the response
-      const response = await fetch("https://dress-me-up-backend-livid.vercel.app/outfits/upload", {
-        method: "POST",
-        body: formData,
-      });
+      formData.append('upload_preset', "DressMeUp");
 
-      // Parse the response JSON
-      const data = await response.json();
-      console.log(data.url);
-
-      // Dispatch the setImage action with the received URL
-      await dispatch(setImage(data.url));
-
-      // Set the modal visible to show the confirmation popup
-      setModalVisible(true);
+      fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
+          method: 'POST',
+          body: formData,
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          console.log("secured data returned from cloudinary", data);
+          dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+          setModalVisible(true);
+        });
     } catch (error) {
       console.log("Error capturing view or setting image: ", error);
     }

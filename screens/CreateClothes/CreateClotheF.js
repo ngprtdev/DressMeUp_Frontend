@@ -30,7 +30,7 @@ function CreateClotheF({ navigation }) {
     const randomId = Math.random() * 1000
     dispatch(setId(randomId))
     console.log("id", randomId)
-    fetch('https://dress-me-up-backend-livid.vercel.app/clothes', {
+    fetch('https://dress-me-up-backend-red.vercel.app/clothes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

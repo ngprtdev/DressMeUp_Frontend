@@ -54,7 +54,6 @@ function CreateClotheE({ navigation }) {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: false,
-      aspect: [4, 3],
       quality: 1
     })
 
@@ -71,22 +70,24 @@ function CreateClotheE({ navigation }) {
     const formData = new FormData();
 
 
-    formData.append('photoFromFront', {
+    formData.append('file', {
         uri: compressedImage.uri,
         name: 'photo.jpg',
         type: 'image/jpeg',
     })
 
-    fetch('https://dress-me-up-backend-livid.vercel.app/clothes/upload', {
+    formData.append('upload_preset', "DressMeUp");
+
+    fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
         method: 'POST',
         body: formData,
-    }).then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            dispatch(setImage(data.url));
-        });
-
-        navigation.navigate("CreateClotheF")
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+        navigation.navigate("CreateClotheF");
+    });
 
   }
 

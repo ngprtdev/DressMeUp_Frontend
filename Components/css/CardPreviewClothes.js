@@ -43,7 +43,7 @@ function PreviewListingTop({ handleTopOutfitSubmit, tops }) {
             <View style={styles.pictoContainer}>
               {clothe.season.spring && <SpringSmall />}
               {clothe.season.summer && <SummerSmall />}
-              {clothe.season.autumn && <AutumnSmall />}
+              {clothe.season.fall && <AutumnSmall />}
               {clothe.season.winter && <WinterSmall />}
               {clothe.event.casual && <EventCasualSmall />}
               {clothe.event.party && <EventPartySmall />}
@@ -101,7 +101,7 @@ function PreviewListingBottom({ handleBottomOutfitSubmit }) {
             <View style={styles.pictoContainer}>
               {clothe.season.spring && <SpringSmall />}
               {clothe.season.summer && <SummerSmall />}
-              {clothe.season.autumn && <AutumnSmall />}
+              {clothe.season.fall && <AutumnSmall />}
               {clothe.season.winter && <WinterSmall />}
               {clothe.event.casual && <EventCasualSmall />}
               {clothe.event.party && <EventPartySmall />}
@@ -226,7 +226,7 @@ function PreviewTopList({ handlePreview }) {
                 <View style={styles.pictoContainer}>
                   {clothe.season.spring && <SpringSmall />}
                   {clothe.season.summer && <SummerSmall />}
-                  {clothe.season.autumn && <AutumnSmall />}
+                  {clothe.season.fall && <AutumnSmall />}
                   {clothe.season.winter && <WinterSmall />}
                   {clothe.event.casual && <EventCasualSmall />}
                   {clothe.event.party && <EventPartySmall />}
@@ -262,7 +262,7 @@ function PreviewBottomList({ handlePreview }) {
               {clothe.event.sport && <EventSportSmall />}
               {clothe.season.spring && <SpringSmall />}
               {clothe.season.summer && <SummerSmall />}
-              {clothe.season.autumn && <AutumnSmall />}
+              {clothe.season.fall && <AutumnSmall />}
               {clothe.season.winter && <WinterSmall />}
               {clothe.waterproof && <RainSmall />}
             </View>
@@ -487,7 +487,7 @@ function PreviewListingFiltered({
               <View style={styles.pictoContainer}>
                   {clothe.season.spring && <SpringSmall />}
                   {clothe.season.summer && <SummerSmall />}
-                  {clothe.season.autumn && <AutumnSmall />}
+                  {clothe.season.fall && <AutumnSmall />}
                   {clothe.season.winter && <WinterSmall />}
                   {clothe.event.casual && <EventCasualSmall />}
                   {clothe.event.party && <EventPartySmall />}
@@ -545,7 +545,7 @@ function PreviewFilteredList({
               <View style={styles.pictoContainer}>
                   {clothe.season.spring && <SpringSmall />}
                   {clothe.season.summer && <SummerSmall />}
-                  {clothe.season.autumn && <AutumnSmall />}
+                  {clothe.season.fall && <AutumnSmall />}
                   {clothe.season.winter && <WinterSmall />}
                   {clothe.event.casual && <EventCasualSmall />}
                   {clothe.event.party && <EventPartySmall />}

@@ -23,26 +23,28 @@ export default function SnapScreen({ navigation }) {
 
     const takePicture = async () => {
         const photo = await cameraRef.takePictureAsync({ quality: 0.5, flash });
-        console.log(photo)
-        
-        const formData = new FormData();
+    console.log(photo);
 
+    const formData = new FormData();
 
-        formData.append('photoFromFront', {
-            uri: photo.uri,
-            name: 'photo.jpg',
-            type: 'image/jpeg',
-        })
+    formData.append('file', {
+        uri: photo.uri,
+        name: 'photo.jpg',
+        type: 'image/jpeg',
+    });
 
-        fetch('https://dress-me-up-backend-livid.vercel.app/clothes/upload', {
-            method: 'POST',
-            body: formData,
-        }).then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                dispatch(setImage(data.url));
-                navigation.navigate("CreateClotheF")
-            });
+    formData.append('upload_preset', "DressMeUp");
+
+    fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
+        method: 'POST',
+        body: formData,
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+        navigation.navigate("CreateClotheF");
+    });
     };
 
     return (

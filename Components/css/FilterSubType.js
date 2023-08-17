@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const tops = ["Chemise", "Manteau", "Pull", "Robe", "T-shirt", "Veste"];
+const tops = ["Chemise", "Manteau", "Pull", "Robe", "T-shirt", "Top", "Veste"];
 const bottoms = [
   "Chino",
   "Jean",
@@ -42,6 +42,7 @@ const accessories = [
   "Echarpe",
   "Lunettes",
   "Montre",
+  "Sac"
 ];
 
 function FilterSubTypeTop({ handleSubtypeInput }) {

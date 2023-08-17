@@ -42,7 +42,7 @@ function HomeUser({ navigation }) {
 
       dispatch(resetFavorite())
   
-       fetch("https://dress-me-up-backend-livid.vercel.app/users/clothes", {
+       fetch("https://dress-me-up-backend-red.vercel.app/users/clothes", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user.username }),
@@ -52,7 +52,7 @@ function HomeUser({ navigation }) {
           dispatch(PushFromDBToClothesStore(data));
         });
   
-       fetch("https://dress-me-up-backend-livid.vercel.app/users/outfits", {
+       fetch("https://dress-me-up-backend-red.vercel.app/users/outfits", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user.username }),

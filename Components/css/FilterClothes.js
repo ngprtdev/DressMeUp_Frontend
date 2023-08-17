@@ -13,10 +13,10 @@ import {
   const windowWidth = Dimensions.get("window").width;
   const windowHeight = Dimensions.get("window").height;
   
-  const top = ["T-shirt", "Chemise", "Pull", "Veste", "Manteau", "Robe"];
-  const bottom = ["Pantalon", "Short", "Jupe", "Pantacourt", "Jean", "Chino"];
-  const shoes = ["Basket","Mocassins","Escarpins","Bottes","Bottines","Ballerines","Sandales"];
-  const accessories = ["Bonnet","Chapeau","Casquette","Ceinture","Collant","Ceinture","Bijoux","Lunettes"];
+  const top = [ "Chemise", "Manteau", "Pull", "Robe", "T-shirt", "Top", "Veste"];
+  const bottom = ["Chino","Jean", "Jupe","Pantacourt", "Pantalon", "Short"];
+  const shoes = [ "Ballerines", "Basket", "Bottes", "Bottines", "Escarpins", "Mocassins", "Sandales" ];
+  const accessories = ["Bijoux", "Bonnet","Chapeau","Casquette","Ceinture","Collant","Lunettes", "Montre", "Sac"];
   const colors = [
     { translate: "black", text: "Noir" , hexa: "#000000" },
     { translate: "brown", text: "Marron" , hexa: "#A52A2A" },

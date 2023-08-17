@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   StyleSheet,
   TextInput,
-  KeyboardAvoidingView,
   TouchableOpacity,
   Text,
   View,
@@ -26,7 +25,7 @@ export default function SignIn({navigation}) {
 
   const handleSubmit = () => {
     if (showSignup) {
-      fetch("https://dress-me-up-backend-livid.vercel.app/users/signup", {
+      fetch("https://dress-me-up-backend-red.vercel.app/users/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -45,7 +44,7 @@ export default function SignIn({navigation}) {
           setShowSignup(!showSignup)
         });
     } else {
-      fetch("https://dress-me-up-backend-livid.vercel.app/users/signin", {
+      fetch("https://dress-me-up-backend-red.vercel.app/users/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -85,7 +84,7 @@ export default function SignIn({navigation}) {
 
   return (
     <View style={styles.modalGrey}>
-      <View style={styles.imputContainer}>
+      <View style={styles.inputContainer}>
         <View>
           <Text style={styles.title}>
             {showSignup ? "Inscription" : "Connexion"}
@@ -153,12 +152,13 @@ export default function SignIn({navigation}) {
         </TouchableOpacity>
       </View>
     </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   modalGrey: {
-    height: windowHeight * 0.77,
+    height: windowHeight * 0.50,
     backgroundColor: "#EAF4F4",
     borderRadius: 30,
     alignItems: "center",
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     width: windowWidth,
   },
 
-  imputContainer: {
+  inputContainer: {
     alignItems: "center",
     rowGap: 10,
   },
@@ -194,12 +194,10 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   viewContainer: {
-    position: "absolute",
-    bottom: "20%",
-    left: 0,
-    right: 0,
+    flex: 1,
+    justifyContent: "center", // Centrer verticalement
     alignItems: "center",
-    padding: "10%",
+    padding: "5%", // Réduire la marge inférieure
   },
 
   textBottom: {

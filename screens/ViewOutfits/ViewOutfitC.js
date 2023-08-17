@@ -58,7 +58,7 @@ function ViewOutfitC({ navigation, route }) {
 
   const handleFavorite = (outfit) => {
     // console.log(outfit.id)
-    fetch('https://dress-me-up-backend-livid.vercel.app/outfits', {
+    fetch('https://dress-me-up-backend-red.vercel.app/outfits', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ outfitId: outfit.id }),
@@ -87,7 +87,7 @@ function ViewOutfitC({ navigation, route }) {
 
   const handleDelete = (outfit) => {
     console.log("id to delete", outfit.id)
-    fetch(`https://dress-me-up-backend-livid.vercel.app/outfits`, {
+    fetch(`https://dress-me-up-backend-red.vercel.app/outfits`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ outfitId: outfit.id }),
