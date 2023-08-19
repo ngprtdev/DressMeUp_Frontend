@@ -16,6 +16,8 @@ import { ButtonDelete } from "../../Components/css/ButtonGreenLight";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteClothe } from "../../reducers/clothes";
+import {BACKEND_URL} from '@env'
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -42,7 +44,7 @@ function ViewClotheC({ navigation, route }) {
 
   const handleDelete = (clothe) => {
     console.log("id to delete", clothe.id)
-    fetch(`https://dress-me-up-backend-red.vercel.app/clothes`, {
+    fetch(`https://${BACKEND_URL}/clothes`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ clotheId: clothe.id }),

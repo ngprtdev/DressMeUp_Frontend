@@ -14,6 +14,7 @@ import * as ImageManipulator from 'expo-image-manipulator';
 
 import { setImage } from '../../reducers/clothes';
 import { useDispatch } from 'react-redux';
+import { CLOUDINARY_URL } from '@env';
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -78,7 +79,7 @@ function CreateClotheE({ navigation }) {
 
     formData.append('upload_preset', "DressMeUp");
 
-    fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
+    fetch(`${CLOUDINARY_URL}`, {
         method: 'POST',
         body: formData,
     })

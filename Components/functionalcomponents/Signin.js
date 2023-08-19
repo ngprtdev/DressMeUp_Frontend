@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Dimensions } from "react-native";
 import { login, logout } from "../../reducers/user";
+import { BACKEND_URL } from '@env';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -25,7 +26,7 @@ export default function SignIn({navigation}) {
 
   const handleSubmit = () => {
     if (showSignup) {
-      fetch("https://dress-me-up-backend-red.vercel.app/users/signup", {
+      fetch(`https://${BACKEND_URL}/users/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -44,7 +45,7 @@ export default function SignIn({navigation}) {
           setShowSignup(!showSignup)
         });
     } else {
-      fetch("https://dress-me-up-backend-red.vercel.app/users/signin", {
+      fetch(`https://${BACKEND_URL}/users/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -96,10 +97,10 @@ export default function SignIn({navigation}) {
         <TextInput
           email
           placeholder="Identifiant"
-          autoCapitalize="none" // https://reactnative.dev/docs/textinput#autocapitalize
-          keyboardType="default" // https://reactnative.dev/docs/textinput#keyboardtype
-          textContentType="username" // https://reactnative.dev/docs/textinput#textcontenttype-ios
-          autoComplete="username" // https://reactnative.dev/docs/textinput#autocomplete-android
+          autoCapitalize="none"
+          keyboardType="default" 
+          textContentType="username" 
+          autoComplete="username"
           onChangeText={(value) => setUsername(value)}
           value={username}
           style={styles.input}

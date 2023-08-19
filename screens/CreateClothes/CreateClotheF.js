@@ -7,6 +7,8 @@ import { TopContainerPicto } from '../../Components/css/TopContainer'
 import { ButtonValidate } from '../../Components/css/ButtonGreenLight';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveClothe, setId } from '../../reducers/clothes';
+import {BACKEND_URL} from '@env'
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -30,7 +32,7 @@ function CreateClotheF({ navigation }) {
     const randomId = Math.random() * 1000
     dispatch(setId(randomId))
     console.log("id", randomId)
-    fetch('https://dress-me-up-backend-red.vercel.app/clothes', {
+    fetch(`https://${BACKEND_URL}/clothes`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

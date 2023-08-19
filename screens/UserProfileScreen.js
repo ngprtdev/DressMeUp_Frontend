@@ -23,6 +23,8 @@ import CustomPopup from "../Components/functionalcomponents/CustomPopup";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Camera, CameraType } from "expo-camera";
 import { useIsFocused } from "@react-navigation/native";
+import {BACKEND_URL} from '@env'
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -69,7 +71,7 @@ export default function UserProfileScreen({ navigation }) {
       console.log("Selfie:", photo.uri);
 
       fetch(
-        `https://dress-me-up-backend-red.vercel.app/users/upload/${user.token}/${user.idProfilPict}`,
+        `https://${BACKEND_URL}/users/upload/${user.token}/${user.idProfilPict}`,
         {
           method: "POST",
           body: formData,
@@ -124,7 +126,7 @@ export default function UserProfileScreen({ navigation }) {
 
   const handleConfirmEmailChange = () => {
     if (newEmail && newEmail.trim() !== "") {
-      fetch("https://dress-me-up-backend-red.vercel.app/users", {
+      fetch(`https://${BACKEND_URL}/users`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -155,7 +157,7 @@ export default function UserProfileScreen({ navigation }) {
   const handleConfirmUsernameChange = () => {
     handleNewUsernameSave();
     if (newUsername && newUsername.trim() !== "") {
-      fetch("https://dress-me-up-backend-red.vercel.app/users", {
+      fetch(`https://${BACKEND_URL}/users`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

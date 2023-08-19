@@ -26,6 +26,8 @@ import {
 } from "../../reducers/outfits";
 import { captureRef } from "react-native-view-shot";
 import { useRef } from "react";
+import {BACKEND_URL, CLOUDINARY_URL} from '@env'
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -150,7 +152,7 @@ function OverviewOutfit({ navigation }) {
     const randomId = Math.random() * 1000;
     dispatch(setId(randomId));
     // console.log('tempOutfit', temporaryOutfit)
-    fetch("https://dress-me-up-backend-red.vercel.app/outfits", {
+    fetch(`https://${BACKEND_URL}/outfits`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -202,7 +204,7 @@ function OverviewOutfit({ navigation }) {
 
       formData.append('upload_preset', "DressMeUp");
 
-      fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
+      fetch(`${CLOUDINARY_URL}`, {
           method: 'POST',
           body: formData,
       })

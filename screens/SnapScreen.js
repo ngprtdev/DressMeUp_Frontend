@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPhoto } from "../reducers/user";
 import { setImage } from "../reducers/clothes";
 import { useIsFocused } from "@react-navigation/native";
+import { CLOUDINARY_URL } from '@env';
 
 
 export default function SnapScreen({ navigation }) {
@@ -35,7 +36,7 @@ export default function SnapScreen({ navigation }) {
 
     formData.append('upload_preset', "DressMeUp");
 
-    fetch('https://api.cloudinary.com/v1_1/dzecmdqus/upload', {
+    fetch(`${CLOUDINARY_URL}`, {
         method: 'POST',
         body: formData,
     })

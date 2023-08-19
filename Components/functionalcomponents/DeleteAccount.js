@@ -14,7 +14,6 @@ export default function DeleteAccount() {
           blurType="light" // Vous pouvez utiliser "light", "dark" ou "extra light" pour le niveau de flou
           blurAmount={10} // Vous pouvez ajuster l'intensité du flou (entre 1 et 100)
         >
-          {/* Contenu de votre modal */}
           <View style={{ backgroundColor: "#fff", padding: 20 }}>
             <Text>Contenu de la modal</Text>
             <TouchableOpacity onPress={closeModal}>

@@ -18,6 +18,8 @@ import {
   MoreThanTwoFav,
 } from "../Components/css/HomeComponents";
 import { useEffect } from "react";
+import {BACKEND_URL} from '@env'
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -42,7 +44,7 @@ function HomeUser({ navigation }) {
 
       dispatch(resetFavorite())
   
-       fetch("https://dress-me-up-backend-red.vercel.app/users/clothes", {
+       fetch(`https://${BACKEND_URL}/users/clothes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user.username }),
@@ -52,7 +54,7 @@ function HomeUser({ navigation }) {
           dispatch(PushFromDBToClothesStore(data));
         });
   
-       fetch("https://dress-me-up-backend-red.vercel.app/users/outfits", {
+       fetch(`https://${BACKEND_URL}/users/outfits`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user.username }),
