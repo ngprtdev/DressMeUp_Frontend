@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { Dimensions } from "react-native";
-import { login, logout } from "../../reducers/user";
+import { login } from "../../reducers/user";
 import { BACKEND_URL } from '@env';
 
 const windowWidth = Dimensions.get("window").width;
@@ -37,6 +37,7 @@ export default function SignIn({navigation}) {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data)
           if (data.result) {
             setUsername("");
             setEmail("");
@@ -57,7 +58,6 @@ export default function SignIn({navigation}) {
         .then((response) => response.json())
         .then((data) => {
           if (data.result) {
-            //console.log(data);
             dispatch(
               login({
                 token: data.token,
@@ -123,7 +123,6 @@ export default function SignIn({navigation}) {
           autoCapitalize="none"
           keyboardType="default"
           textContentType="password"
-          // autoComplete="current-password" // https://reactnative.dev/docs/textinput#autocomplete-android
           onChangeText={(value) => setPassword(value)}
           value={password}
           style={styles.input}
@@ -196,7 +195,7 @@ const styles = StyleSheet.create({
   },
   viewContainer: {
     flex: 1,
-    justifyContent: "center", // Centrer verticalement
+    justifyContent: "center",
     alignItems: "center",
     padding: "5%", // Réduire la marge inférieure
   },

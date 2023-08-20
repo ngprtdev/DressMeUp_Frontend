@@ -2,14 +2,11 @@
 import React from "react";
 import {
   Dimensions,
-  KeyboardAvoidingView,
   StyleSheet,
-  Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TopContainerPicto, TopContainerPictoSubtext } from "../../Components/css/TopContainer";
+import { TopContainerPictoSubtext } from "../../Components/css/TopContainer";
 import { ButtonNextStep } from "../../Components/css/ButtonGreenLight";
 import {
   FilterMaterialBottom,
@@ -22,20 +19,16 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setCut,
   setMaterial,
-  setName,
   setSeason,
   setWaterproof,
 } from "../../reducers/clothes";
 
-const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 function CreateClotheD({ navigation }) {
   const dispatch = useDispatch();
   const clothe = useSelector((state) => state.clothes.temporaryClothe);
-  const fullClothe = useSelector((state) => state.clothes.temporaryClothe);
 
-  // console.log(clothe)
   const handleTopSubmit = () => {
     navigation.navigate("CreateClotheE");
   };
@@ -59,11 +52,7 @@ function CreateClotheD({ navigation }) {
   };
 
   const handleClotheName = () => {
-    dispatch(
-      setName(
-        `${fullClothe.subtype} ${fullClothe.brand} ${fullClothe.color.translate}`
-      )
-    );
+    return // obligatoire car nous n'avons prévu qu'un seul bouton ButtonNextStep
   };
 
   return (

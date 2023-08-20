@@ -17,7 +17,6 @@ import {
   TopContainerListingAccessories,
   TopContainerListingShoes,
 } from "../../Components/css/TopContainer";
-import { useSelector } from "react-redux";
 import { PreviewFilteredList } from "../../Components/css/CardPreviewClothes";
 
 const windowWidth = Dimensions.get("window").width;

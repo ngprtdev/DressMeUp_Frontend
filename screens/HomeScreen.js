@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useIsFocused} from "@react-navigation/native";
 import { StyleSheet, View, TouchableOpacity, Text, Image, SafeAreaView } from "react-native";
 import { Dimensions } from "react-native";
-import { PlusCircle, Settings } from "../Components/css/Pictos";
+import { Settings } from "../Components/css/Pictos";
 import { PushFromDBToClothesStore, resetClothesStore } from "../reducers/clothes";
 import { PushFromDBToOutfitStore, addFavoriteId, pushFromDbToFavArray, resetFavorite, resetOutfitStore } from "../reducers/outfits";
 import {

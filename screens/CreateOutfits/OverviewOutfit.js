@@ -14,10 +14,7 @@ import { Dimensions } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import {
   saveOutfit,
-  removeLastItem,
   setImage,
-  addToHistory,
-  undoLastChange,
   pushToHistory,
   setNewHistory,
   resetTemporaryOutfit,
@@ -46,8 +43,6 @@ function OverviewOutfit({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [temporaryState, setTemporaryState] = useState(temporaryOutfit);
-
-  // console.log('TEMP OUTFIT', temporaryOutfit)
 
   useEffect(() => {
     dispatch(pushToHistory(temporaryOutfit));
@@ -151,7 +146,6 @@ function OverviewOutfit({ navigation }) {
     setModalVisible(!true);
     const randomId = Math.random() * 1000;
     dispatch(setId(randomId));
-    // console.log('tempOutfit', temporaryOutfit)
     fetch(`https://${BACKEND_URL}/outfits`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -188,13 +182,11 @@ function OverviewOutfit({ navigation }) {
 
   const handleValidateOutfit = async () => {
     try {
-      // Capture the outfit screenshot
       const uri = await captureRef(outfitScreenshotRef, {
         format: "png",
         quality: 1,
       });
 
-      // Create a new FormData to send the image to the server
       const formData = new FormData();
       formData.append("file", {
         uri: uri,
@@ -210,8 +202,8 @@ function OverviewOutfit({ navigation }) {
       })
       .then((response) => response.json())
       .then((data) => {
-          console.log("secured data returned from cloudinary", data);
-          dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+          // console.log("secured data returned from cloudinary", data);
+          dispatch(setImage(data.secure_url)); 
           setModalVisible(true);
         });
     } catch (error) {

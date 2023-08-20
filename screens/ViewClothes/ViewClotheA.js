@@ -2,15 +2,9 @@
 
 // Topcontainer coder en dur, il faut prévoir un composant spécifique à importer plutôt
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { LeftArrowCircle } from '../../Components/css/Pictos'
+import { StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {SmallPreviewAccessories, SmallPreviewBottom, SmallPreviewShoes, SmallPreviewTop } from '../../Components/css/CardPreviewClothes';
-import { resetEvent, resetOutfits, resetTemporaryOutfit } from "../../reducers/outfits";
-import { resetClothes } from '../../reducers/clothes';
-import { useState } from 'react';
 import { TopContainerListingClothes } from '../../Components/css/TopContainer';
 
 function ViewClotheA({navigation}) {
@@ -20,22 +14,18 @@ function ViewClotheA({navigation}) {
   };
 
   const handleAllTops = () => {
-    // Pass the appropriate props to ViewClotheB
     navigation.navigate('ViewClotheB', { component: 'top' });
   };
 
   const handleAllBottom = () => {
-    // Pass the appropriate props to ViewClotheB
     navigation.navigate('ViewClotheB', { component: 'bottom' });
   };
 
   const handleAllShoes = () => {
-    // Pass the appropriate props to ViewClotheB
     navigation.navigate('ViewClotheB', { component: 'shoes' });
   };
 
   const handleAllAccessories = () => {
-    // Pass the appropriate props to ViewClotheB
     navigation.navigate('ViewClotheB', { component: 'accessories' });
   };
 

@@ -1,10 +1,8 @@
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import { Dimensions } from "react-native";
 import { LeftArrowCircle, Undo, Trash, List } from "./Pictos";
-import { useSelector } from "react-redux";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 function TopContainerCreateClothe({ handleGoBack }) {
   return (
@@ -208,7 +206,7 @@ function TopContainerPictoSubtextAccessories({ handleGoBack }) {
         </View>
       </View>
       <View style={styles.subTextContainer}>
-        <Text style={styles.textTitle}>Dites nous en plus sur ton accessoire</Text>
+        <Text style={styles.textTitle}>Dites nous en plus sur votre accessoire</Text>
         <Text style={styles.textSubtitle}>
           Choisissez parmi les options ci-dessous
         </Text>
@@ -241,7 +239,6 @@ function TopContainerDeleteOutfit({
   handleGoBack,
   handleModalView,
   handleList,
-  selectedItem,
 }) {
   return (
     <View style={styles.headerMainContainer}>

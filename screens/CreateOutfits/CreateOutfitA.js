@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { CardEvent } from "../../Components/css/CardEvent";
 import { Dimensions } from "react-native";
 import { ButtonNextStepOutfit } from "../../Components/css/ButtonGreenLight";
-import { resetClothes } from "../../reducers/clothes";
 import { resetEvent, resetHistory, resetTemporaryOutfit, setEvent } from "../../reducers/outfits";
 
 const windowWidth = Dimensions.get("window").width;
@@ -29,8 +28,6 @@ function CreateOutfitA({ navigation }) {
   };
 
   // Reset du store
-  const outfits = useSelector((state) => state.outfits)
-  const clothes = useSelector((state) => state.clothes.clothes)
   const resetStore = () => {
     dispatch(resetEvent())
   }

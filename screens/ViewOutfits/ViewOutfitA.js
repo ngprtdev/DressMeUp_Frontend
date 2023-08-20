@@ -2,7 +2,7 @@
 
 // Topcontainer coder en dur, il faut prévoir un composant spécifique à importer plutôt
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
   StyleSheet,
@@ -18,8 +18,7 @@ import { TopContainerListingOutfits } from "../../Components/css/TopContainer";
 import { PreviewAllOutfit } from "../../Components/css/CardPreviewOutfit";
 import { Dimensions } from "react-native";
 import { useState } from "react";
-import { CardEvent, CardEventFilter } from "../../Components/css/CardEvent";
-import { resetOutfits } from "../../reducers/outfits";
+import { CardEventFilter } from "../../Components/css/CardEvent";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -28,8 +27,6 @@ function ViewOutfitA({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-
-  const outfits = useSelector((state) => state.outfits.outfits);
 
   const handleGoBack = () => {
     navigation.navigate("HomeScreen");

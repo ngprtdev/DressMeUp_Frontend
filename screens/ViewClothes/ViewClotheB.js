@@ -41,14 +41,12 @@ import {
   FilterEvent,
 } from "../../Components/css/FilterClothes";
 
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 function ViewClotheB({ navigation, route }) {
-  const dispatch = useDispatch();
 
   const { component } = route.params;
 

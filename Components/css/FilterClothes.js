@@ -7,11 +7,8 @@ import {
   } from "react-native";
   
   import { Dimensions } from "react-native";
-  import { EventParty, EventSport, EventCasual, EventWork, Spring, Summer, Autumn, Winter } from "./Pictos";
-  import { useState } from "react";
   
   const windowWidth = Dimensions.get("window").width;
-  const windowHeight = Dimensions.get("window").height;
   
   const top = [ "Chemise", "Manteau", "Pull", "Robe", "T-shirt", "Top", "Veste"];
   const bottom = ["Chino","Jean", "Jupe","Pantacourt", "Pantalon", "Short"];

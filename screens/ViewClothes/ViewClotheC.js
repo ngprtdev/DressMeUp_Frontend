@@ -55,7 +55,6 @@ function ViewClotheC({ navigation, route }) {
           dispatch(deleteClothe(clothe.id))
           console.log("clothes after delete", clothesArray)
           setModalVisible(!true)
-
           navigation.navigate('HomeScreen')
         }
       }

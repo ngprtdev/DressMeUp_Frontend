@@ -7,16 +7,11 @@ import {
 } from "react-native";
 
 import { Dimensions } from "react-native";
-import { EventParty, EventSport, EventCasual, EventWork } from "./Pictos";
 import { useSelector } from "react-redux";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 const topMatiere = ["Coton", "Cuir", "Dentelle", "Laine", "Lin", "Soie", "Velours", "Autre"];
-
-
-// coton, cuir, laine, lin, polyester, denim, toile, dentelle, soie, cachemire
 
 function FilterMaterialTop({handleMaterialInput}) {
 

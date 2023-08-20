@@ -19,7 +19,6 @@ function CreateClotheF({ navigation }) {
   const dispatch = useDispatch()
   const picture = useSelector((state) => state.clothes.temporaryClothe.image)
   const clothes = useSelector((state) => state.clothes.temporaryClothe)
-  const clothesStore = useSelector((state) => state.clothes.clothes)
   const [modalVisible, setModalVisible] = useState(false);
   const username = useSelector((state) => state.user.value.username)
 
@@ -81,8 +80,6 @@ function CreateClotheF({ navigation }) {
     fall: "Automne",
     winter: "Hiver",
   };
-
-  // console.log(picture)
 
   return (
     <View style={styles.mainContainer}>

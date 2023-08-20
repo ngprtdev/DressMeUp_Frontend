@@ -1,16 +1,12 @@
 import {
     StyleSheet,
-    TextInput,
     View,
-    TouchableOpacity,
-    Text,
+    Text
   } from "react-native";
   
   import { Dimensions } from "react-native";
-  import { EventParty, EventSport, EventCasual, EventWork } from "./Pictos";
   
   const windowWidth = Dimensions.get("window").width;
-  const windowHeight = Dimensions.get("window").height;
   
   const clothesShapes = ["Ajusté", "Oversized", "Regular", "Skinny", "Slim"];
  

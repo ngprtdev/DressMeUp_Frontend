@@ -11,12 +11,8 @@ import { useSelector } from "react-redux";
 import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
-
 
 function FilterColors({handleColorSelect}) {
-
-  const colorState = useSelector((state) => state.clothes.temporaryClothe.color)
 
   const [colorsState, setColorsState] = useState([
     { isClicked: false }, // black
@@ -56,9 +52,9 @@ function FilterColors({handleColorSelect}) {
   const handlePress = (index) => {
     const updatedColorStates = [...colorsState];
     updatedColorStates.map((color, index) =>{
-      updatedColorStates[index].isClicked = false
+      updatedColorStates[index].isClicked = false // On remet l'ensemble des filtres couleurs en false
     })
-    updatedColorStates[index].isClicked = !updatedColorStates[index].isClicked;
+    updatedColorStates[index].isClicked = !updatedColorStates[index].isClicked; // On met en true seulement le filtre couleur sélectionné
     setColorsState(updatedColorStates);
   };
 

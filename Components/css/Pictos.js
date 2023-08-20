@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import Svg, {
   G,
   Polygon,

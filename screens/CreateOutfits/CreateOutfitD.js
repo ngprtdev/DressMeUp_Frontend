@@ -8,9 +8,6 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  Modal,
-  Text,
 } from "react-native";
 import { Dimensions } from "react-native";
 import { Filters } from "../../Components/css/Pictos";
@@ -30,16 +27,10 @@ import {
   TopContainerListingShoes,
 } from "../../Components/css/TopContainer";
 import {
-  PreviewListingBottom,
-  PreviewListingTop,
-  PreviewListingAccessories,
-  PreviewListingShoes,
   PreviewListingFiltered,
 } from "../../Components/css/CardPreviewClothes";
-import { FilterSubtypeAccessories, FilterSubtypeTop, FilterSubtypeBottom, FilterSubtypeShoes, FilterColor, FilterMaterialShoes, FilterMaterialBottom, FilterMaterialTop, FilterCut, FilterSeason, FilterRain } from "../../Components/css/FilterClothes";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;

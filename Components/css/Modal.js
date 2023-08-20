@@ -1,16 +1,9 @@
 import {
   StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-  Image,
-  Modal,
-  Button
+  View
 } from "react-native";
 import { Dimensions } from "react-native";
-import { FilterSeason } from "./FilterSeason";
-import { FilterSubTypeTop } from "./FilterSubType";
-import ButtonGreen from "./ButtonGreen";
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;

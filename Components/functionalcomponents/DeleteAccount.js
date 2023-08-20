@@ -1,9 +1,4 @@
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
-import { Dimensions } from "react-native";
-import { LeftArrowCircle } from "./Pictos";
-
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 export default function DeleteAccount() {
   return (

@@ -26,10 +26,6 @@ function CreateClotheE({ navigation }) {
   const [takingPicture, setTakingPicture] = useState(false);
   const [picture, setPicture] = useState(null)
 
-  const handleTopSubmit = () => {
-    navigation.navigate('CreateClotheF');
-  };
-
   const handleGoBack = () => {
     navigation.goBack();
   };
@@ -42,7 +38,7 @@ function CreateClotheE({ navigation }) {
       console.log(status)
       navigation.navigate('SnapScreen')
     } else {
-      // Handle permission denied case
+      console.log(status)
     }
   };
 
@@ -72,23 +68,23 @@ function CreateClotheE({ navigation }) {
 
 
     formData.append('file', {
-        uri: compressedImage.uri,
-        name: 'photo.jpg',
-        type: 'image/jpeg',
+      uri: compressedImage.uri,
+      name: 'photo.jpg',
+      type: 'image/jpeg',
     })
 
     formData.append('upload_preset', "DressMeUp");
 
     fetch(`${CLOUDINARY_URL}`, {
-        method: 'POST',
-        body: formData,
+      method: 'POST',
+      body: formData,
     })
-    .then((response) => response.json())
-    .then((data) => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
-        dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+        dispatch(setImage(data.secure_url));
         navigation.navigate("CreateClotheF");
-    });
+      });
 
   }
 
@@ -185,9 +181,9 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30
   },
-  tip : {
+  tip: {
     fontFamily: "Lora-Regular",
-    textAlign : 'center'
+    textAlign: 'center'
   }
 
 })

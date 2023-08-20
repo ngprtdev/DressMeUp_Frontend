@@ -21,13 +21,12 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "../../Components/css/Pictos";
-import { useIsFocused } from "@react-navigation/native";
+import {BACKEND_URL} from '@env';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 function ViewOutfitC({ navigation, route }) {
-  const isFocused = useIsFocused();
   const { selectedItem } = route.params;
   const dispatch = useDispatch();
 
@@ -42,7 +41,6 @@ function ViewOutfitC({ navigation, route }) {
   const [modalVisible2, setModalVisible2] = useState(false);
 
   const favoriteArrayId = useSelector((state) => state.outfits.favoriteArrayId);
-  const favoriteArray = useSelector((state) => state.outfits.favoriteArray);
 
 
   const isFavorite = favoriteArrayId.includes(selectedItem.id);
@@ -57,21 +55,16 @@ function ViewOutfitC({ navigation, route }) {
   };
 
   const handleFavorite = (outfit) => {
-    // console.log(outfit.id)
-    fetch('https://dress-me-up-backend-red.vercel.app/outfits', {
+    fetch(`https://${BACKEND_URL}/outfits`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ outfitId: outfit.id }),
     }).then((response) => response.json())
       .then((data) => {
-        // console.log(data)
         if (data.isFavorite) {
           dispatch(addFavoriteId(outfit.id))
           dispatch(addFavorite(outfit))
-          // console.log(favoriteArray)
         } else {
-          // console.log(favoriteArray)
-
           dispatch(addFavoriteId(outfit.id))
           dispatch(addFavorite(outfit))
         }
@@ -87,7 +80,7 @@ function ViewOutfitC({ navigation, route }) {
 
   const handleDelete = (outfit) => {
     console.log("id to delete", outfit.id)
-    fetch(`https://dress-me-up-backend-red.vercel.app/outfits`, {
+    fetch(`https://${BACKEND_URL}/outfits`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ outfitId: outfit.id }),

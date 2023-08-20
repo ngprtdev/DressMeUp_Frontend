@@ -9,10 +9,10 @@ import {
 
 import { Dimensions } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 import { setBrand } from "../../reducers/clothes";
 import { SmallPlusCircle } from "./Pictos";
+
+const windowWidth = Dimensions.get("window").width;
 
 function FilterBrand() {
   const dispatch = useDispatch()

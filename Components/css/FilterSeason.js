@@ -1,12 +1,10 @@
 import {
   StyleSheet,
-  TextInput,
   View,
   TouchableOpacity,
   Text,
 } from "react-native";
 
-import { Dimensions } from "react-native";
 import { Spring, Summer, Autumn, Winter, SpringWhite, SummerWhite, AutumnWhite, WinterWhite } from "./Pictos";
 import { useState } from "react";
 

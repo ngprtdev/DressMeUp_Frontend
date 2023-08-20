@@ -1,22 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, StyleSheet, KeyboardAvoidingView, Text, TouchableOpacity, Modal } from "react-native";
-import { logout } from "../../reducers/user";
 import { Dimensions } from "react-native";
 import { Edit, PlusCircle } from "../css/Pictos";
 import { AccountTopContainer } from "../css/TopContainer";
-//import { BlurView } from '@react-native-community/blur';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 export default function Setting() {
-//   const [modalVisible, setModalVisible] = useState(false);
-//   const openModal = () => {
-//     setModalVisible(true);
-//   };
-//   const closeModal = () => {
-//     setModalVisible(false);
-//   };
+
 
   return (
     <KeyboardAvoidingView style={styles.mainContainer}>

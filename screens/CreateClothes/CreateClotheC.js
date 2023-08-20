@@ -4,16 +4,12 @@ import React from "react";
 import {
   Dimensions,
   Keyboard,
-  KeyboardAvoidingView,
   StyleSheet,
-  Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
-  TopContainerPicto,
   TopContainerPictoSubtext,
   TopContainerPictoSubtextAccessories,
 } from "../../Components/css/TopContainer";
@@ -69,8 +65,6 @@ function CreateClotheC({ navigation }) {
       )
     );
   };
-
-  // GERER NAVIGATION IMPOSSIBLE SI LES FILTRES OBLIGATOIRES NON RENSEIGNES
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

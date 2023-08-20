@@ -5,7 +5,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { TopContainerCreateClothe } from "../../Components/css/TopContainer";
 import { CardAddClothesOutfit } from "../../Components/css/CardAddClothes";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setMaintype } from "../../reducers/outfits";
 
 function CreateOutfitB({ navigation }) {

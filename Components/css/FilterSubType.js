@@ -1,3 +1,5 @@
+// Renvoie l'information du subtype choisi dans le store (écran CreateClotheC)
+
 import {
   StyleSheet,
   TextInput,
@@ -7,13 +9,18 @@ import {
 } from "react-native";
 
 import { Dimensions } from "react-native";
-import { EventParty, EventSport, EventCasual, EventWork } from "./Pictos";
 import { useSelector } from "react-redux";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
-const tops = ["Chemise", "Manteau", "Pull", "Robe", "T-shirt", "Top", "Veste"];
+const tops = [
+  "Chemise",
+  "Manteau",
+  "Pull",
+  "Robe",
+  "T-shirt",
+  "Top",
+  "Veste"];
 const bottoms = [
   "Chino",
   "Jean",
