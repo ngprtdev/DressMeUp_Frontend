@@ -51,8 +51,8 @@ function FilterColors({handleColorSelect}) {
 
   const handlePress = (index) => {
     const updatedColorStates = [...colorsState];
-    updatedColorStates.map((color, index) =>{
-      updatedColorStates[index].isClicked = false // On remet l'ensemble des filtres couleurs en false
+    updatedColorStates.map((color) =>{
+      color.isClicked = false // On remet l'ensemble des filtres couleurs en false
     })
     updatedColorStates[index].isClicked = !updatedColorStates[index].isClicked; // On met en true seulement le filtre couleur sélectionné
     setColorsState(updatedColorStates);

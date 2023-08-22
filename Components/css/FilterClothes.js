@@ -31,7 +31,7 @@ import {
     { translate: "silver", text: "Argent" , hexa: "#C0C0C0" },
   ];
   const events = [
-    { text: "Soirée", translate :"pary" },
+    { text: "Soirée", translate :"party" },
     { text: "Casual", translate : "casual"},
     { text: "Work", translate : "work"},
     { text: "Sport", translate : "sport"},

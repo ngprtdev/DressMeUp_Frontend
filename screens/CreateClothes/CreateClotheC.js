@@ -94,7 +94,7 @@ function CreateClotheC({ navigation }) {
               <FilterColors handleColorSelect={handleColorSelect} />
               {clothe.maintype === "shoes" ||
               clothe.maintype === "accessories" ? null : (
-                <ButtonOptions handleTopSubmit={handleTopSubmit} />
+                <ButtonOptions handleTopSubmit={handleTopSubmit} handleClotheName={handleClotheName} />
               )}
               <ButtonSkip
               handleSkip={handleSkip}

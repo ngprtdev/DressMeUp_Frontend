@@ -54,7 +54,7 @@ const accessories = [
 
 function FilterSubTypeTop({ handleSubtypeInput }) {
   const subtype = useSelector((state) => state.clothes.temporaryClothe.subtype);
-
+console.log(subtype)
   return (
     <>
       <View style={styles.filtersContainer}>
@@ -65,7 +65,7 @@ function FilterSubTypeTop({ handleSubtypeInput }) {
           {tops.map((top, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => handleSubtypeInput(tops[index])}
+              onPress={() => handleSubtypeInput(top)}
             >
               <View
                 style={
@@ -102,7 +102,7 @@ function FilterSubTypeBottom({ handleSubtypeInput }) {
         {bottoms.map((bottom, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => handleSubtypeInput(bottoms[index])}
+            onPress={() => handleSubtypeInput(bottom)}
           >
             <View
               style={
@@ -140,7 +140,7 @@ function FilterSubTypeShoes({ handleSubtypeInput }) {
         {shoes.map((shoe, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => handleSubtypeInput(shoes[index])}
+            onPress={() => handleSubtypeInput(shoe)}
           >
             <View
               style={
@@ -179,7 +179,7 @@ function FilterSubTypeAccessories({ handleSubtypeInput }) {
           {accessories.map((accessorie, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => handleSubtypeInput(accessories[index])}
+              onPress={() => handleSubtypeInput(accessorie)}
             >
               <View
                 style={
