@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, SafeAreaView, Text } from "react-native";
 import { TopContainerPicto } from "../../Components/css/TopContainer";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { CardEvent } from "../../Components/css/CardEvent";
 import { Dimensions } from "react-native";
 import { ButtonNextStepOutfit } from "../../Components/css/ButtonGreenLight";

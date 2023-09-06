@@ -4,7 +4,7 @@ import { StyleSheet, View, TouchableOpacity, Text, Image, SafeAreaView } from "r
 import { Dimensions } from "react-native";
 import { Settings } from "../Components/css/Pictos";
 import { PushFromDBToClothesStore, resetClothesStore } from "../reducers/clothes";
-import { PushFromDBToOutfitStore, addFavoriteId, pushFromDbToFavArray, resetFavorite, resetOutfitStore } from "../reducers/outfits";
+import { PushFromDBToOutfitStore, pushFromDbToFavArray, resetFavorite, resetOutfitStore } from "../reducers/outfits";
 import {
   AddFirstClothe,
   NoOutfits,

@@ -1,12 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Svg, { Polygon, Line } from "react-native-svg";
 import { Camera } from "expo-camera";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { useDispatch, useSelector } from "react-redux";
-import { addPhoto } from "../reducers/user";
+import { useDispatch } from "react-redux";
 import { setImage } from "../reducers/clothes";
-import { useIsFocused } from "@react-navigation/native";
 import { CLOUDINARY_URL } from '@env';
 
 
@@ -15,11 +13,9 @@ export default function SnapScreen({ navigation }) {
     const [flash, setFlash] = useState(Camera.Constants.FlashMode.auto);
 
     const dispatch = useDispatch();
-    const isFocused = useIsFocused();
 
 
     let cameraRef = useRef(null);
-
 
 
     const takePicture = async () => {
@@ -43,7 +39,7 @@ export default function SnapScreen({ navigation }) {
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
-        dispatch(setImage(data.secure_url)); // Utilisez secure_url pour obtenir le lien sécurisé de l'image sur Cloudinary
+        dispatch(setImage(data.secure_url)); 
         navigation.navigate("CreateClotheF");
     });
     };
