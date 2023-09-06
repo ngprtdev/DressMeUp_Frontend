@@ -37,10 +37,8 @@ function HomeUser({ navigation }) {
     if (isFocused) {
 
        dispatch(resetClothesStore());
-      // console.log("after reset clothes", clothes);
   
        dispatch(resetOutfitStore());
-      // console.log("after reset outfits", outfits);
 
       dispatch(resetFavorite())
   
@@ -61,19 +59,16 @@ function HomeUser({ navigation }) {
       })
         .then((response) => response.json())
         .then((data) => {
-          // console.log('data outfit from back', data)
           dispatch(PushFromDBToOutfitStore(data));
           console.log("data is favorite from back", data)
           dispatch(pushFromDbToFavArray(data))
         });
-        // console.log("outfits", outfits)
 
     };
 
     }
   , [isFocused]);
-      // console.log("after push clothes", clothes);
-      // console.log("after push outfits", outfits);
+  
 
 
   const user = useSelector((state) => state.user.value);
