@@ -1,6 +1,8 @@
 // Correspond à 3A-A du Figma
 
 import React, { useEffect, useState } from "react";
+import { Platform } from 'react-native';
+
 import { View, StyleSheet, SafeAreaView, Text } from "react-native";
 import { TopContainerPicto } from "../../Components/css/TopContainer";
 import { useDispatch } from "react-redux";
@@ -12,9 +14,9 @@ import { resetEvent, resetHistory, resetTemporaryOutfit, setEvent } from "../../
 const windowWidth = Dimensions.get("window").width;
 
 function CreateOutfitA({ navigation }) {
-  
+
   const dispatch = useDispatch();
-  
+
   const handleGoBack = () => {
     navigation.goBack();
   };
@@ -35,7 +37,7 @@ function CreateOutfitA({ navigation }) {
     resetStore()
     dispatch(resetTemporaryOutfit())
     dispatch(resetHistory())
-  },[]);
+  }, []);
 
   return (
     <SafeAreaView style={styles.mainContainer} >

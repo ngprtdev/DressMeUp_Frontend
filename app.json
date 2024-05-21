@@ -4,16 +4,35 @@
     "slug": "frontend",
     "version": "1.0.0",
     "updates": {
-      "useClassicUpdates": true
+      "useClassicUpdates": true,
+      "url": "https://u.expo.dev/5872a833-0cce-4aa4-9bbe-477b910b72de"
     },
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ngprtdev.frontend"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5872a833-0cce-4aa4-9bbe-477b910b72de"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "android": {
+      "package": "com.ngprtdev.frontend"
+    },
+    "owner": "ngprtdev",
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
